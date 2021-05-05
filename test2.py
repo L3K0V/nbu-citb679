@@ -23,21 +23,27 @@ for row in df.itertuples():
     g.add((item, OER.forCourse, course))
     g.add((item, RDFS.label, Literal(row._1)))
 
+    # Set educational level (всички, математици, etc...)
     scopes = row[5].split(',')
 
     for scope in scopes:
         g.add((item, SDO.educationalLevel, Literal(scope.strip())))
 
+    # Set learning material topics (Programming, Python, etc...)
     topics = row[4].split(',')
 
     for topic in topics:
         g.add((item, OER.forTopic, Literal(topic.strip())))
 
+    # Set age ranges for the learning material
     ageRanges = row[3].split(',')
 
     for range in ageRanges:
         g.add((item, SDO.typicalAgeRange, Literal(range.strip())))
 
+    # Set material pre-requisites (T1.2,T1.3,T7.1-T7.15)
+    # TODO: Ranges currently does not handle between values, just the first and the last
+    # TODO: Spread T1 range to T1.1,T1.2,T1.3
     dependsOn = str(row._2).split(',')
 
     for dep in dependsOn:
