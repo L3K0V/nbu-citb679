@@ -42,3 +42,6 @@ for row in df.itertuples():
 for i in g.transitive_objects(BNode("T6.1"), OER.coursePrerequisites):
     for n in g.transitive_objects(i, OER.coursePrerequisites):
         print(n)
+
+file = open("output.json", mode="w")
+file.write(g.serialize(format='json-ld').decode('utf-8'))
