@@ -23,7 +23,7 @@ for topic in df.index:
 for row in df.itertuples():
     item = BNode(row.Index)
     g.add((item, RDF.type, OER.LearningComponent))
-    g.add((item, OER.forTopic, BNode(row.Index.split('.')[0])))
+    g.add((item, OER.forCourse, BNode(row.Index.split('.')[0])))
     g.add((item, RDFS.label, Literal(row._1)))
 
     dependsOn = str(row._2).split(',')
@@ -36,5 +36,9 @@ for row in df.itertuples():
         else:
             g.add((item, OER.coursePrerequisites, BNode(dep.strip())))
 
-for stmt in sorted(g):
-    pprint.pprint(stmt)
+# for stmt in sorted(g):
+#     pprint.pprint(stmt)
+
+for i in g.transitive_objects(BNode("T6.1"), OER.coursePrerequisites):
+    for n in g.transitive_objects(i, OER.coursePrerequisites):
+        print(n)
