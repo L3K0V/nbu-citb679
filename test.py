@@ -1,9 +1,9 @@
-from rdflib import Graph, Literal, RDF, URIRef, FOAF
-# rdflib knows about some namespaces, like FOAF
-from rdflib.namespace import FOAF , XSD
+from rdflib import Graph, Literal, RDF, URIRef
+from rdflib.namespace import FOAF, XSD
 
 # create a Graph
 g = Graph()
+g.bind("foaf", FOAF)
 
 # Create an RDF URI node to use as the subject for multiple triples
 t1_1 = URIRef("http://example.org/t1_1")
@@ -45,4 +45,5 @@ qres = g.query(
           ?b foaf:interest 'tag1' .
        }""")
 
-print(qres)
+for row in qres:
+    print("%s" % row)
