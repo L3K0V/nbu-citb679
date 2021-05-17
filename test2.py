@@ -1,60 +1,149 @@
-import pprint
 import pandas as pd
 
 from rdflib import Graph, Literal, Namespace, RDF, BNode
-from rdflib.namespace import FOAF, XSD, RDFS, SDO
+from rdflib.namespace import FOAF, RDFS, SDO
 
 OER = Namespace("http://oerschema.org/")
 
-df = pd.read_excel('data/1619073985303267.ods', index_col=0)
-df = df.dropna()
 
-# create a Graph
-g = Graph()
-g.bind("foaf", FOAF)
-g.bind("oer", OER)
+# tagove -> ketwords
+class KnowlageLibrary:
+    def __init__(self):
+        self.graph = Graph()
+        self.graph.bind("foaf", FOAF)
+        self.graph.bind("oer", OER)
+        self.graph.bind('sdo', SDO)
 
-for row in df.itertuples():
-    course = BNode(row.Index.strip().split('.')[0])
-    g.add((course, RDF.type, OER.Course))
+    def load(self, filename=None):
+        if (not filename):
+            return
 
-    item = BNode(row.Index)
-    g.add((item, RDF.type, OER.LearningComponent))
-    g.add((item, OER.forCourse, course))
-    g.add((item, RDFS.label, Literal(row._1)))
+        df = pd.read_excel(filename, index_col=0)
+        df = df.dropna(how='all')
 
-    # Set educational level (всички, математици, etc...)
-    scopes = row[5].split(',')
+        for row in df.itertuples():
+            course = BNode(row.Index.strip().split('.')[0])
+            self.graph.add((course, RDF.type, OER.Course))
 
-    for scope in scopes:
-        g.add((item, SDO.educationalLevel, Literal(scope.strip())))
+            material = BNode(row.Index)
+            self.graph.add((material, RDF.type, OER.LearningComponent))
+            self.graph.add((material, OER.forCourse, course))
+            self.graph.add((material, RDFS.label, Literal(row._1)))
 
-    # Set learning material topics (Programming, Python, etc...)
-    topics = row[4].split(',')
+            self.__populateCourseDependencies(material, row)
+            self.__populateCourseAgeRanges(material, row)
+            self.__populateCourseTopics(material, row)
+            self.__populateCourseLanguages(material, row)
+            self.__populateCourseEduLevels(material, row)
+            self.__populateCourseConcepts(material, row)
+            self.__populateCourseTags(material, row)
 
-    for topic in topics:
-        g.add((item, OER.forTopic, Literal(topic.strip())))
+    def __populateUnique(self, df, column):
+        unique = df[column].unique()
+
+        for item in unique:
+
+            if type(item) is not str:
+                continue
+
+            node = BNode(item.strip())
+
+            self.graph.add((node, RDF.type, SDO.DefinedTerm))
+            self.graph.add((node, SDO.name, Literal(item.strip())))
+            self.graph.add((node, SDO.description, Literal(column)))
+
+    def __populateCourseDependencies(self, material, df):
+        # Set material pre-requisites (T1.2,T1.3,T7.1-T7.15)
+        # TODO: Ranges currently does not handle between values, just the first and the last
+        # TODO: Spread T1 range to T1.1,T1.2,T1.3
+        dependsOn = str(df._2).split(',')
+
+        for dep in dependsOn:
+            if dep.find('-') != -1:
+                ranges = dep.split('-')
+                for range in ranges:
+                    self.graph.add(
+                        (material, OER.coursePrerequisites, BNode(range.strip())))
+            else:
+                self.graph.add(
+                    (material, OER.coursePrerequisites, BNode(dep.strip())))
 
     # Set age ranges for the learning material
-    ageRanges = row[3].split(',')
+    def __populateCourseAgeRanges(self, material, df):
 
-    for range in ageRanges:
-        g.add((item, SDO.typicalAgeRange, Literal(range.strip())))
+        if type(df[3]) is not str:
+            return
 
-    # Set material pre-requisites (T1.2,T1.3,T7.1-T7.15)
-    # TODO: Ranges currently does not handle between values, just the first and the last
-    # TODO: Spread T1 range to T1.1,T1.2,T1.3
-    dependsOn = str(row._2).split(',')
+        ageRanges = str(df[3]).split(',')
 
-    for dep in dependsOn:
-        if dep.find('-') != -1:
-            ranges = dep.split('-')
-            for range in ranges:
-                g.add((item, OER.coursePrerequisites, BNode(range.strip())))
-        else:
-            g.add((item, OER.coursePrerequisites, BNode(dep.strip())))
+        for range in ageRanges:
+            self.graph.add(
+                (material, SDO.typicalAgeRange, Literal(range.strip())))
 
-qres = g.query(
+    # Set learning material topics (Programming, Python, etc...)
+    def __populateCourseTopics(self, material, df):
+
+        if type(df[4]) is not str:
+            return
+
+        topics = str(df[4]).split(',')
+
+        for topic in topics:
+            self.graph.add(
+                (material, OER.forTopic, Literal(topic.strip())))
+
+    def __populateCourseLanguages(self, material, df):
+
+        if type(df[5]) is not str:
+            return
+
+        items = str(df[5]).split(',')
+
+        for item in items:
+            self.graph.add(
+                (material, SDO.inLanguage, Literal(item.strip())))
+
+    # Set educational level (всички, математици, etc...)
+    def __populateCourseEduLevels(self, material, df):
+
+        if type(df[3]) is not str:
+            return
+
+        scopes = str(df[3]).split(',')
+
+        for scope in scopes:
+            self.graph.add(
+                (material, SDO.educationalLevel, Literal(scope.strip())))
+
+     # Set educational level (всички, математици, etc...)
+
+    def __populateCourseConcepts(self, material, df):
+
+        if type(df[6]) is not str:
+            return
+
+        items = str(df[6]).split(',')
+
+        for item in items:
+            self.graph.add(
+                (material, SDO.teaches, Literal(item.strip())))
+
+    def __populateCourseTags(self, material, df):
+
+        if type(df[7]) is not str:
+            return
+
+        items = str(df[7]).split(',')
+
+        for item in items:
+            self.graph.add(
+                (material, SDO.keywords, Literal(item.strip())))
+
+
+library = KnowlageLibrary()
+library.load('data/1619073985303267.ods')
+
+qres = library.graph.query(
     """
     SELECT DISTINCT ?material
     WHERE {
@@ -65,18 +154,18 @@ qres = g.query(
 for row in qres:
     print("%s" % row)
 
-# for stmt in sorted(g):
+# for stmt in sorted(library.graph):
 #     pprint.pprint(stmt)
 
 # for i in g.transitive_objects(BNode("T6.1"), OER.coursePrerequisites):
 #     for n in g.transitive_objects(i, OER.coursePrerequisites):
 #         print(n)
 
-# file = open("output/rdf.json", mode="w")
-# file.write(g.serialize(format='json-ld').decode('utf-8'))
+file = open("output/rdf.json", mode="w")
+file.write(library.graph.serialize(format='json-ld').decode('utf-8'))
 
-# file = open("output/rdf.n3", mode="w")
-# file.write(g.serialize(format='n3').decode('utf-8'))
+file = open("output/rdf.n3", mode="w")
+file.write(library.graph.serialize(format='n3').decode('utf-8'))
 
-# file = open("output/rdf.turtle", mode="w")
-# file.write(g.serialize(format='turtle').decode('utf-8'))
+file = open("output/rdf.turtle", mode="w")
+file.write(library.graph.serialize(format='turtle').decode('utf-8'))
