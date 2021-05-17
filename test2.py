@@ -6,7 +6,6 @@ from rdflib.namespace import FOAF, RDFS, SDO
 OER = Namespace("http://oerschema.org/")
 
 
-# tagove -> ketwords
 class KnowlageLibrary:
     def __init__(self):
         self.graph = Graph()
