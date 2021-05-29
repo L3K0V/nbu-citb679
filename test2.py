@@ -1,4 +1,6 @@
 import pandas as pd
+import inquirer as inq
+import pprint as pp
 
 from rdflib import Graph, Literal, Namespace, RDF, BNode
 from rdflib.namespace import FOAF, RDFS, SDO
@@ -6,7 +8,7 @@ from rdflib.namespace import FOAF, RDFS, SDO
 OER = Namespace("http://oerschema.org/")
 
 
-class KnowlageLibrary:
+class KnowledgeLibrary:
     def __init__(self):
         self.graph = Graph()
         self.graph.bind("foaf", FOAF)
@@ -139,19 +141,84 @@ class KnowlageLibrary:
                 (material, SDO.keywords, Literal(item.strip())))
 
 
-library = KnowlageLibrary()
+library = KnowledgeLibrary()
 library.load('data/1619073985303267.ods')
 
 qres = library.graph.query(
     """
-    SELECT DISTINCT ?material
+    SELECT DISTINCT ?age 
     WHERE {
-        ?m oer:coursePrerequisites* ?material .
+        ?m SDO:typicalAgeRange ?age
     }
-    """, initBindings={'m': BNode("T6.12")})
+    ORDER BY ?age
+    """, initNs={'SDO': SDO}
+)
+
+ages = []
 
 for row in qres:
-    print("%s" % row)
+    ages.append(row[0])
+
+questions = [
+    inq.List('age',
+        message = 'How old are you?',
+        choices = ages
+    )
+]
+
+answer = inq.prompt(questions)
+age = answer['age']
+
+qres = library.graph.query(
+    """
+    SELECT DISTINCT ?m
+    WHERE {
+        ?m SDO:typicalAgeRange '""" + age + """'
+    }
+    ORDER BY ?m
+    """, initNs={'SDO': SDO, 'RDFS': RDFS}
+)
+
+# this should work, but title is not recognized as property for some reason
+# qres = library.graph.query(
+#     """
+#     SELECT DISTINCT ?m
+#     WHERE {
+#         ?m SDO:typicalAgeRange '""" + age + """'
+#         ?m RDFS:label ?title
+#     }
+#     ORDER BY ?title
+#     """, initNs={'SDO': SDO, 'RDFS': RDFS}
+# )
+
+for row in qres:
+    pp.pprint(row)
+
+
+exit()
+
+extraWhere = '?material oer:forTopic ?topic'
+
+qres = library.graph.query(
+    """
+    SELECT DISTINCT ?topic 
+    WHERE {
+        ?m oer:coursePrerequisites* ?material .
+        ?material rdfs:label ?title .
+        """ + extraWhere + """
+    }
+    ORDER BY DESC(?topic)
+    """, 
+    initBindings={'m': BNode("T6.12")}
+)
+
+for row in qres:
+    print("%s" % row[0])
+
+    
+
+# for row in qres:
+#     print("(%s) %s" % (row[0], row[1]))
 
 # for stmt in sorted(library.graph):
 #     pprint.pprint(stmt)
@@ -160,11 +227,11 @@ for row in qres:
 #     for n in g.transitive_objects(i, OER.coursePrerequisites):
 #         print(n)
 
-file = open("output/rdf.json", mode="w")
-file.write(library.graph.serialize(format='json-ld').decode('utf-8'))
+# file = open("output/rdf.json", mode="w")
+# file.write(library.graph.serialize(format='json-ld').decode('utf-8'))
 
-file = open("output/rdf.n3", mode="w")
-file.write(library.graph.serialize(format='n3').decode('utf-8'))
+# file = open("output/rdf.n3", mode="w")
+# file.write(library.graph.serialize(format='n3').decode('utf-8'))
 
-file = open("output/rdf.turtle", mode="w")
-file.write(library.graph.serialize(format='turtle').decode('utf-8'))
+# file = open("output/rdf.turtle", mode="w")
+# file.write(library.graph.serialize(format='turtle').decode('utf-8'))
