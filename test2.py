@@ -286,7 +286,7 @@ eduLevel = answer['eduLevel']
 
 qres = library.graph.query(
     """
-    SELECT DISTINCT ?eduMaterial
+    SELECT DISTINCT ?course ?title
     WHERE {
         ?m SDO:typicalAgeRange '""" + age + """' .
         ?m OER:forTopic '""" + topic + """' .
@@ -295,29 +295,27 @@ qres = library.graph.query(
         ?m SDO:educationalLevel '""" + eduLevel + """' .
         ?m RDFS:label ?title .
         ?m OER:forCourse ?course .
-        BIND(concat(?course, " ", ?title) as ?eduMaterial)
     }
-    ORDER BY ?eduMaterial
+    ORDER BY ?course
     """, initNs={'SDO': SDO, 'RDFS': RDFS, 'OER': OER}
 )
 
 eduMaterials = []
 
-# gotta make this commented part work ('Bnode' object has no attribute 'datatype')
-# for row in qres:
-#     eduMaterials.append(row[0])
+for row in qres:
+    eduMaterials.append(row[0] + " " + row[1])
 
-# questions = [
-#     inq.List('eduMaterial',
-#         message = 'Which educational material would you like to use?',
-#         choices = eduMaterials
-#     )
-# ]
+questions = [
+    inq.List('eduMaterial',
+        message = 'Which educational material would you like to use?',
+        choices = eduMaterials
+    )
+]
 
-# answer = inq.prompt(questions)
-# eduMaterial = answer['eduMaterial']
+answer = inq.prompt(questions)
+eduMaterial = answer['eduMaterial']
 
-# pp.pprint(eduMaterial)
+pp.pprint(eduMaterial)
 
 exit()
 pp.pprint(age)
