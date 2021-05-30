@@ -107,10 +107,10 @@ class KnowledgeLibrary:
     # Set educational level (всички, математици, etc...)
     def __populateCourseEduLevels(self, material, df):
 
-        if type(df[3]) is not str:
+        if type(df[8]) is not str:
             return
 
-        scopes = str(df[3]).split(',')
+        scopes = str(df[8]).split(',')
 
         for scope in scopes:
             self.graph.add(
@@ -171,50 +171,159 @@ age = answer['age']
 
 qres = library.graph.query(
     """
-    SELECT DISTINCT ?m
+    SELECT DISTINCT ?topic
     WHERE {
-        ?m SDO:typicalAgeRange '""" + age + """'
+        ?m SDO:typicalAgeRange '""" + age + """' .
+        ?m OER:forTopic ?topic
     }
-    ORDER BY ?m
-    """, initNs={'SDO': SDO, 'RDFS': RDFS}
+    ORDER BY ?topic
+    """, initNs={'SDO': SDO, 'RDFS': RDFS, 'OER': OER}
 )
 
-# this should work, but title is not recognized as property for some reason
-# qres = library.graph.query(
-#     """
-#     SELECT DISTINCT ?m
-#     WHERE {
-#         ?m SDO:typicalAgeRange '""" + age + """'
-#         ?m RDFS:label ?title
-#     }
-#     ORDER BY ?title
-#     """, initNs={'SDO': SDO, 'RDFS': RDFS}
-# )
+topics = []
 
 for row in qres:
-    pp.pprint(row)
+    topics.append(row[0])
 
+questions = [
+    inq.List('topic',
+        message = 'Which topic would you like to study?',
+        choices = topics
+    )
+]
 
-exit()
-
-extraWhere = '?material oer:forTopic ?topic'
+answer = inq.prompt(questions)
+topic = answer['topic']
 
 qres = library.graph.query(
     """
-    SELECT DISTINCT ?topic 
+    SELECT DISTINCT ?language
     WHERE {
-        ?m oer:coursePrerequisites* ?material .
-        ?material rdfs:label ?title .
-        """ + extraWhere + """
+        ?m SDO:typicalAgeRange '""" + age + """' .
+        ?m OER:forTopic '""" + topic + """' .
+        ?m SDO:inLanguage ?language .
     }
-    ORDER BY DESC(?topic)
-    """, 
-    initBindings={'m': BNode("T6.12")}
+    ORDER BY ?language
+    """, initNs={'SDO': SDO, 'RDFS': RDFS, 'OER': OER}
 )
 
-for row in qres:
-    print("%s" % row[0])
+languages = ['Non-specific']
 
+for row in qres:
+    languages.append(row[0])
+
+questions = [
+    inq.List('language',
+        message = 'Which language do you want to study about?',
+        choices = languages
+    )
+]
+
+answer = inq.prompt(questions)
+language = answer['language']
+
+if (language == 'Non-specific'): 
+    languageWhere = 'FILTER NOT EXISTS {?m SDO:inLanguage ?language}'
+else:
+    languageWhere = '?m SDO:inLanguage "' + language + '"'
+
+qres = library.graph.query(
+    """
+    SELECT DISTINCT ?concept
+    WHERE {
+        ?m SDO:typicalAgeRange '""" + age + """' .
+        ?m OER:forTopic '""" + topic + """' .
+        """ + languageWhere + """ .
+        ?m SDO:teaches ?concept .
+    }
+    ORDER BY ?concept
+    """, initNs={'SDO': SDO, 'RDFS': RDFS, 'OER': OER}
+)
+
+concepts = []
+
+for row in qres:
+    concepts.append(row[0])
+
+questions = [
+    inq.List('concept',
+        message = 'Which concept would you like to learn?',
+        choices = concepts
+    )
+]
+
+answer = inq.prompt(questions)
+concept = answer['concept']
+
+qres = library.graph.query(
+    """
+    SELECT DISTINCT ?eduLevel
+    WHERE {
+        ?m SDO:typicalAgeRange '""" + age + """' .
+        ?m OER:forTopic '""" + topic + """' .
+        """ + languageWhere + """ .
+        ?m SDO:teaches '""" + concept + """' .
+        ?m SDO:educationalLevel ?eduLevel .
+    }
+    ORDER BY ?eduLevel
+    """, initNs={'SDO': SDO, 'RDFS': RDFS, 'OER': OER}
+)
+
+eduLevels = []
+
+for row in qres:
+    eduLevels.append(row[0])
+
+questions = [
+    inq.List('eduLevel',
+        message = 'Which concept would you like to learn?',
+        choices = eduLevels
+    )
+]
+
+answer = inq.prompt(questions)
+eduLevel = answer['eduLevel']
+
+qres = library.graph.query(
+    """
+    SELECT DISTINCT ?eduMaterial
+    WHERE {
+        ?m SDO:typicalAgeRange '""" + age + """' .
+        ?m OER:forTopic '""" + topic + """' .
+        """ + languageWhere + """ .
+        ?m SDO:teaches '""" + concept + """' .
+        ?m SDO:educationalLevel '""" + eduLevel + """' .
+        ?m RDFS:label ?title .
+        ?m OER:forCourse ?course .
+        BIND(concat(?course, " ", ?title) as ?eduMaterial)
+    }
+    ORDER BY ?eduMaterial
+    """, initNs={'SDO': SDO, 'RDFS': RDFS, 'OER': OER}
+)
+
+eduMaterials = []
+
+# gotta make this commented part work ('Bnode' object has no attribute 'datatype')
+# for row in qres:
+#     eduMaterials.append(row[0])
+
+# questions = [
+#     inq.List('eduMaterial',
+#         message = 'Which educational material would you like to use?',
+#         choices = eduMaterials
+#     )
+# ]
+
+# answer = inq.prompt(questions)
+# eduMaterial = answer['eduMaterial']
+
+# pp.pprint(eduMaterial)
+
+exit()
+pp.pprint(age)
+pp.pprint(topic)
+pp.pprint(language)
+pp.pprint(concept)
     
 
 # for row in qres:
