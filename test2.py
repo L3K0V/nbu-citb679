@@ -55,19 +55,36 @@ class KnowledgeLibrary:
 
     def __populateCourseDependencies(self, material, df):
         # Set material pre-requisites (T1.2,T1.3,T7.1-T7.15)
-        # TODO: Ranges currently does not handle between values, just the first and the last
         # TODO: Spread T1 range to T1.1,T1.2,T1.3
         dependsOn = str(df._2).split(',')
 
         for dep in dependsOn:
             if dep.find('-') != -1:
-                ranges = dep.split('-')
-                for range in ranges:
+
+                base, ranges = self.__spreadRanges(dep)
+
+                for r in ranges:
                     self.graph.add(
-                        (material, OER.coursePrerequisites, BNode(range.strip())))
+                        (material, OER.coursePrerequisites, BNode(f'{base.strip()}.{r}')))
             else:
                 self.graph.add(
                     (material, OER.coursePrerequisites, BNode(dep.strip())))
+
+    def __spreadRanges(self, data):
+        ranges = data.split('-')
+
+        if len(ranges) != 2:
+            return
+
+        fromParts = ranges[0].split('.')
+        toParts = ranges[1].split('.')
+        base = fromParts[0]
+        fromDep = int(fromParts[1][0:])
+        toDep = int(toParts[1])
+
+        ranges = range(fromDep, toDep + 1)
+
+        return (base, ranges)
 
     # Set age ranges for the learning material
     def __populateCourseAgeRanges(self, material, df):
@@ -141,188 +158,237 @@ class KnowledgeLibrary:
                 (material, SDO.keywords, Literal(item.strip())))
 
 
-library = KnowledgeLibrary()
-library.load('data/1619073985303267.ods')
+class KnoledgeGenrator:
+    def __init__(self, library):
+        self.library = library
+        self.user_data = {}
 
-qres = library.graph.query(
-    """
-    SELECT DISTINCT ?age 
-    WHERE {
-        ?m SDO:typicalAgeRange ?age
-    }
-    ORDER BY ?age
-    """, initNs={'SDO': SDO}
-)
+    def __language_where_clause(self):
+        if (self.user_data['language'] == 'Non-specific'):
+            return 'FILTER NOT EXISTS {?m sdo:inLanguage ?language}'
+        else:
+            return '?m sdo:inLanguage "' + self.user_data['language'] + '"'
 
-ages = []
+    def __ask_for_age(self):
+        available_ages = self.library.graph.query(
+            """
+            SELECT DISTINCT ?age
+            WHERE {
+                ?m sdo:typicalAgeRange ?age
+            }
+            ORDER BY ?age
+            """
+        )
 
-for row in qres:
-    ages.append(row[0])
+        ages = []
 
-questions = [
-    inq.List('age',
-        message = 'How old are you?',
-        choices = ages
-    )
-]
+        for row in available_ages:
+            ages.append(row[0])
 
-answer = inq.prompt(questions)
-age = answer['age']
+        questions = [
+            inq.List('age',
+                     message='How old are you?',
+                     choices=ages
+                     )
+        ]
 
-qres = library.graph.query(
-    """
-    SELECT DISTINCT ?topic
-    WHERE {
-        ?m SDO:typicalAgeRange '""" + age + """' .
-        ?m OER:forTopic ?topic
-    }
-    ORDER BY ?topic
-    """, initNs={'SDO': SDO, 'RDFS': RDFS, 'OER': OER}
-)
+        self.user_data.update(inq.prompt(questions))
 
-topics = []
+    def __ask_for_topic(self):
+        available_topics = self.library.graph.query(
+            """
+            SELECT DISTINCT ?topic
+            WHERE {
+                ?m sdo:typicalAgeRange '""" + self.user_data['age'] + """' .
+                ?m oer:forTopic ?topic
+            }
+            ORDER BY ?topic
+            """
+        )
 
-for row in qres:
-    topics.append(row[0])
+        topics = []
 
-questions = [
-    inq.List('topic',
-        message = 'Which topic would you like to study?',
-        choices = topics
-    )
-]
+        for row in available_topics:
+            topics.append(row[0])
 
-answer = inq.prompt(questions)
-topic = answer['topic']
+        questions = [
+            inq.List('topic',
+                     message='Which topic would you like to study?',
+                     choices=topics
+                     )
+        ]
 
-qres = library.graph.query(
-    """
-    SELECT DISTINCT ?language
-    WHERE {
-        ?m SDO:typicalAgeRange '""" + age + """' .
-        ?m OER:forTopic '""" + topic + """' .
-        ?m SDO:inLanguage ?language .
-    }
-    ORDER BY ?language
-    """, initNs={'SDO': SDO, 'RDFS': RDFS, 'OER': OER}
-)
+        self.user_data.update(inq.prompt(questions))
 
-languages = ['Non-specific']
+    def __ask_for_lang(self):
+        available_languages = self.library.graph.query(
+            """
+            SELECT DISTINCT ?language
+            WHERE {
+                ?m sdo:typicalAgeRange '""" + self.user_data['age'] + """' .
+                ?m oer:forTopic '""" + self.user_data['topic'] + """' .
+                ?m sdo:inLanguage ?language .
+            }
+            ORDER BY ?language
+            """
+        )
 
-for row in qres:
-    languages.append(row[0])
+        languages = ['Non-specific']
 
-questions = [
-    inq.List('language',
-        message = 'Which language do you want to study about?',
-        choices = languages
-    )
-]
+        for row in available_languages:
+            languages.append(row[0])
 
-answer = inq.prompt(questions)
-language = answer['language']
+        questions = [
+            inq.List('language',
+                     message='Which language do you want to study about?',
+                     choices=languages
+                     )
+        ]
 
-if (language == 'Non-specific'): 
-    languageWhere = 'FILTER NOT EXISTS {?m SDO:inLanguage ?language}'
-else:
-    languageWhere = '?m SDO:inLanguage "' + language + '"'
+        self.user_data.update(inq.prompt(questions))
 
-qres = library.graph.query(
-    """
-    SELECT DISTINCT ?concept
-    WHERE {
-        ?m SDO:typicalAgeRange '""" + age + """' .
-        ?m OER:forTopic '""" + topic + """' .
-        """ + languageWhere + """ .
-        ?m SDO:teaches ?concept .
-    }
-    ORDER BY ?concept
-    """, initNs={'SDO': SDO, 'RDFS': RDFS, 'OER': OER}
-)
+    def __ask_for_concept(self):
 
-concepts = []
+        available_concepts = self.library.graph.query(
+            """
+            SELECT DISTINCT ?concept
+            WHERE {
+                ?m sdo:typicalAgeRange '""" + self.user_data['age'] + """' .
+                ?m oer:forTopic '""" + self.user_data['topic'] + """' .
+                """ + self.__language_where_clause() + """ .
+                ?m sdo:teaches ?concept .
+            }
+            ORDER BY ?concept
+            """
+        )
 
-for row in qres:
-    concepts.append(row[0])
+        concepts = []
 
-questions = [
-    inq.List('concept',
-        message = 'Which concept would you like to learn?',
-        choices = concepts
-    )
-]
+        for row in available_concepts:
+            concepts.append(row[0])
 
-answer = inq.prompt(questions)
-concept = answer['concept']
+        questions = [
+            inq.List('concept',
+                     message='Which concept would you like to learn?',
+                     choices=concepts
+                     )
+        ]
 
-qres = library.graph.query(
-    """
-    SELECT DISTINCT ?eduLevel
-    WHERE {
-        ?m SDO:typicalAgeRange '""" + age + """' .
-        ?m OER:forTopic '""" + topic + """' .
-        """ + languageWhere + """ .
-        ?m SDO:teaches '""" + concept + """' .
-        ?m SDO:educationalLevel ?eduLevel .
-    }
-    ORDER BY ?eduLevel
-    """, initNs={'SDO': SDO, 'RDFS': RDFS, 'OER': OER}
-)
+        self.user_data.update(inq.prompt(questions))
 
-eduLevels = []
+    def __ask_for_level(self):
+        available_levels = self.library.graph.query(
+            """
+            SELECT DISTINCT ?eduLevel
+            WHERE {
+                ?m sdo:typicalAgeRange '""" + self.user_data['age'] + """' .
+                ?m oer:forTopic '""" + self.user_data['topic'] + """' .
+                """ + self.__language_where_clause() + """ .
+                ?m sdo:teaches '""" + self.user_data['concept'] + """' .
+                ?m sdo:educationalLevel ?eduLevel .
+            }
+            ORDER BY ?eduLevel
+            """
+        )
 
-for row in qres:
-    eduLevels.append(row[0])
+        edu_levels = []
 
-questions = [
-    inq.List('eduLevel',
-        message = 'Which concept would you like to learn?',
-        choices = eduLevels
-    )
-]
+        for row in available_levels:
+            edu_levels.append(row[0])
 
-answer = inq.prompt(questions)
-eduLevel = answer['eduLevel']
+        questions = [
+            inq.List('edu_level',
+                     message='What is you education level?',
+                     choices=edu_levels
+                     )
+        ]
 
-qres = library.graph.query(
-    """
-    SELECT DISTINCT ?course ?title
-    WHERE {
-        ?m SDO:typicalAgeRange '""" + age + """' .
-        ?m OER:forTopic '""" + topic + """' .
-        """ + languageWhere + """ .
-        ?m SDO:teaches '""" + concept + """' .
-        ?m SDO:educationalLevel '""" + eduLevel + """' .
-        ?m RDFS:label ?title .
-        ?m OER:forCourse ?course .
-    }
-    ORDER BY ?course
-    """, initNs={'SDO': SDO, 'RDFS': RDFS, 'OER': OER}
-)
+        self.user_data.update(inq.prompt(questions))
 
-eduMaterials = []
+    def __ask_for_material(self):
+        available_materials = self.library.graph.query(
+            """
+            SELECT DISTINCT ?m ?course ?title
+            WHERE {
+                ?m sdo:typicalAgeRange '""" + self.user_data['age'] + """' .
+                ?m oer:forTopic '""" + self.user_data['topic'] + """' .
+                """ + self.__language_where_clause() + """ .
+                ?m sdo:teaches '""" + self.user_data['concept'] + """' .
+                ?m sdo:educationalLevel '""" + self.user_data['edu_level'] + """' .
+                ?m rdfs:label ?title .
+                ?m oer:forCourse ?course .
+            }
+            ORDER BY ?course
+            """
+        )
 
-for row in qres:
-    eduMaterials.append(row[0] + " " + row[1])
+        edu_materials = []
 
-questions = [
-    inq.List('eduMaterial',
-        message = 'Which educational material would you like to use?',
-        choices = eduMaterials
-    )
-]
+        for row in available_materials:
+            edu_materials.append((row[1] + " " + row[2], row))
 
-answer = inq.prompt(questions)
-eduMaterial = answer['eduMaterial']
+        questions = [
+            inq.List('edu_material',
+                     message='Which educational material would you like to use?',
+                     choices=edu_materials
+                     )
+        ]
 
-pp.pprint(eduMaterial)
+        self.user_data.update(inq.prompt(questions))
 
-exit()
-pp.pprint(age)
-pp.pprint(topic)
-pp.pprint(language)
-pp.pprint(concept)
-    
+    def __ask_for_already_known(self):
+        node, course, title = self.user_data['edu_material']
+
+        course_deps_result_set = self.library.graph.query(
+            """
+            SELECT DISTINCT ?material ?title
+            WHERE {
+                ?m oer:coursePrerequisites* ?material .
+                ?material rdfs:label ?title .
+            }
+            ORDER BY ?material
+            """, initBindings={'m': node}
+        )
+
+        course_deps = []
+
+        for row in course_deps_result_set:
+            course_deps.append((str(row[1]), row[0]))
+
+        questions = [
+            inq.Checkbox('already_known',
+                         message="What do you know already?",
+                         choices=course_deps,
+                         ),
+        ]
+
+        self.user_data.update(inq.prompt(questions))
+
+    def prompt_for_user_profile(self):
+        self.user_data = {}
+        self.__ask_for_age()
+        self.__ask_for_topic()
+        self.__ask_for_lang()
+        self.__ask_for_concept()
+        self.__ask_for_level()
+        self.__ask_for_material()
+        self.__ask_for_already_known()
+
+
+def main():
+    library = KnowledgeLibrary()
+
+    library.load('data/1619073985303267.ods')
+
+    generator = KnoledgeGenrator(library)
+    generator.prompt_for_user_profile()
+    pp.pprint(generator.user_data)
+
+    exit()
+
+
+if __name__ == "__main__":
+    main()
 
 # for row in qres:
 #     print("(%s) %s" % (row[0], row[1]))
