@@ -15,7 +15,7 @@ class KnowledgeLibrary:
         self.graph.bind("oer", OER)
         self.graph.bind('sdo', SDO)
 
-    def load(self, filename=None):
+    def generate(self, filename=None):
         if (not filename):
             return
 
@@ -54,8 +54,8 @@ class KnowledgeLibrary:
             self.graph.add((node, SDO.description, Literal(column)))
 
     def __populateCourseDependencies(self, material, df):
-        # Set material pre-requisites (T1.2,T1.3,T7.1-T7.15)
-        # TODO: Spread T1 range to T1.1,T1.2,T1.3
+        """Populate all course dependencies or prerequisites
+        """
         dependsOn = str(df._2).split(',')
 
         for dep in dependsOn:
@@ -71,6 +71,9 @@ class KnowledgeLibrary:
                     (material, OER.coursePrerequisites, BNode(dep.strip())))
 
     def __spreadRanges(self, data):
+        """Spread ranges like T1.1-T1.8 to 
+        T1.1, T1.2, T1.3 .... T.1.8
+        """
         ranges = data.split('-')
 
         if len(ranges) != 2:
@@ -86,8 +89,10 @@ class KnowledgeLibrary:
 
         return (base, ranges)
 
-    # Set age ranges for the learning material
     def __populateCourseAgeRanges(self, material, df):
+        """Populate all age ranges for the learning material in a 
+        format of a tuples 8-10, 10-20 etc.
+        """
 
         if type(df[3]) is not str:
             return
@@ -98,8 +103,9 @@ class KnowledgeLibrary:
             self.graph.add(
                 (material, SDO.typicalAgeRange, Literal(range.strip())))
 
-    # Set learning material topics (Programming, Python, etc...)
     def __populateCourseTopics(self, material, df):
+        """Populate all course learning material topics (Programming, Python, etc...)
+        """
 
         if type(df[4]) is not str:
             return
@@ -111,6 +117,8 @@ class KnowledgeLibrary:
                 (material, OER.forTopic, Literal(topic.strip())))
 
     def __populateCourseLanguages(self, material, df):
+        """Populate all course programming languages
+        """
 
         if type(df[5]) is not str:
             return
@@ -121,8 +129,9 @@ class KnowledgeLibrary:
             self.graph.add(
                 (material, SDO.inLanguage, Literal(item.strip())))
 
-    # Set educational level (всички, математици, etc...)
     def __populateCourseEduLevels(self, material, df):
+        """Set educational level (всички, математици, etc...)
+        """
 
         if type(df[8]) is not str:
             return
@@ -133,9 +142,9 @@ class KnowledgeLibrary:
             self.graph.add(
                 (material, SDO.educationalLevel, Literal(scope.strip())))
 
-     # Set educational level (всички, математици, etc...)
-
     def __populateCourseConcepts(self, material, df):
+        """Populate all course concetps
+        """
 
         if type(df[6]) is not str:
             return
@@ -147,6 +156,8 @@ class KnowledgeLibrary:
                 (material, SDO.teaches, Literal(item.strip())))
 
     def __populateCourseTags(self, material, df):
+        """Populate all course tags
+        """
 
         if type(df[7]) is not str:
             return
@@ -156,6 +167,47 @@ class KnowledgeLibrary:
         for item in items:
             self.graph.add(
                 (material, SDO.keywords, Literal(item.strip())))
+
+    def export(self, relative_path, format):
+        """Exports the graph into a one of the supported
+        formats and given filename.
+
+        Supported formats:
+        - n3
+        - nquads
+        - nt
+        - pretty-xml
+        - trig
+        - trig
+        - turtle
+        - xml
+        - json-ld
+        """
+        import os
+        dirname = os.path.dirname(__file__)
+        filename = os.path.join(dirname, relative_path)
+        file = open(filename, mode="w+")
+        file.write(self.graph.serialize(format=format).decode('utf-8'))
+        file.close()
+
+    def import(self, filename=None, format=None):
+        """Imports a graph from a file with selected format
+
+        Supported formats:
+        - n3
+        - nquads
+        - nt
+        - pretty-xml
+        - trig
+        - trig
+        - turtle
+        - xml
+        - json-ld
+        """
+        if (not filename or not format):
+            return
+
+        self.graph.parse(filename, format=format)
 
 
 class KnoledgeGenrator:
@@ -378,12 +430,14 @@ class KnoledgeGenrator:
 def main():
     library = KnowledgeLibrary()
 
-    library.load('data/1619073985303267.ods')
+    library.parse("rdf.json", "json-ld")
+    # library.generate('data/1619073985303267.ods')
 
     generator = KnoledgeGenrator(library)
     generator.prompt_for_user_profile()
     pp.pprint(generator.user_data)
 
+    library.export("rdf.json", "json-ld")
     exit()
 
 
