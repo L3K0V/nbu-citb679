@@ -1,0 +1,5436 @@
+[
+  {
+    "@id": "_:T1.5",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T1.2"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T1"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Какво е изпълним файл"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "10-14"
+      }
+    ]
+  },
+  {
+    "@id": "_:T1.2",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T1.1"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T1"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Компилатори и интерпретатори"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "58-70"
+      }
+    ]
+  },
+  {
+    "@id": "_:T1",
+    "@type": [
+      "http://oerschema.org/Course"
+    ]
+  },
+  {
+    "@id": "_:T1.1",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:nan"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T1"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Какво е език за програмиране?"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "8-10"
+      }
+    ]
+  },
+  {
+    "@id": "_:nan"
+  },
+  {
+    "@id": "_:T6.6",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T3.7"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T6"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Малки удобства"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "58-70"
+      }
+    ]
+  },
+  {
+    "@id": "_:T3.7",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T3.5"
+      },
+      {
+        "@id": "_:T3.4"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T3"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Оператори за сравнение"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "float"
+      },
+      {
+        "@value": "int"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "базови_оператори"
+      },
+      {
+        "@value": "променливи"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "10-14"
+      }
+    ]
+  },
+  {
+    "@id": "_:T3.5",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T3.2"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T3"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Tип число с плаваща запетая"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "float"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "променливи"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "8-10"
+      }
+    ]
+  },
+  {
+    "@id": "_:T3.2",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T3.1"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T3"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Tипове"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "типове"
+      },
+      {
+        "@value": "променливи"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "8-10"
+      }
+    ]
+  },
+  {
+    "@id": "_:T3.1",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T2"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T3"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Променливи"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "променливи"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "10-14"
+      }
+    ]
+  },
+  {
+    "@id": "_:T2",
+    "@type": [
+      "http://oerschema.org/Course"
+    ]
+  },
+  {
+    "@id": "_:T3",
+    "@type": [
+      "http://oerschema.org/Course"
+    ]
+  },
+  {
+    "@id": "_:T3.4",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T3.2"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T3"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Целочислен тип"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "int"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "типове"
+      },
+      {
+        "@value": "променливи"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "8-10"
+      }
+    ]
+  },
+  {
+    "@id": "_:T6",
+    "@type": [
+      "http://oerschema.org/Course"
+    ]
+  },
+  {
+    "@id": "_:T8.1",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T6"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T8"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Речници в Python въведение"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "речници"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "58-69"
+      },
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "14-18"
+      }
+    ]
+  },
+  {
+    "@id": "_:T8",
+    "@type": [
+      "http://oerschema.org/Course"
+    ]
+  },
+  {
+    "@id": "_:T7.28",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T7.16"
+      },
+      {
+        "@id": "_:T7.21"
+      },
+      {
+        "@id": "_:T7.3"
+      },
+      {
+        "@id": "_:T7.5"
+      },
+      {
+        "@id": "_:T7.13"
+      },
+      {
+        "@id": "_:T7.11"
+      },
+      {
+        "@id": "_:T7.7"
+      },
+      {
+        "@id": "_:T7.10"
+      },
+      {
+        "@id": "_:T7.18"
+      },
+      {
+        "@id": "_:T7.9"
+      },
+      {
+        "@id": "_:T7.19"
+      },
+      {
+        "@id": "_:T7.23"
+      },
+      {
+        "@id": "_:T7.25"
+      },
+      {
+        "@id": "_:T7.2"
+      },
+      {
+        "@id": "_:T7.20"
+      },
+      {
+        "@id": "_:T7.17"
+      },
+      {
+        "@id": "_:T7.22"
+      },
+      {
+        "@id": "_:T7.4"
+      },
+      {
+        "@id": "_:T7.8"
+      },
+      {
+        "@id": "_:T7.14"
+      },
+      {
+        "@id": "_:T7.12"
+      },
+      {
+        "@id": "_:T7.1"
+      },
+      {
+        "@id": "_:T7.24"
+      },
+      {
+        "@id": "_:T7.6"
+      },
+      {
+        "@id": "_:T7.15"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T7"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Задача 1"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "задача"
+      },
+      {
+        "@value": "Python_основи"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "кортежи"
+      },
+      {
+        "@value": "списъци"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "8-10"
+      }
+    ]
+  },
+  {
+    "@id": "_:T7.16",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T7.3"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T7"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Методи"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "списъци"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "10-14"
+      }
+    ]
+  },
+  {
+    "@id": "_:T7.3",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T7.1"
+      },
+      {
+        "@id": "_:T7.2"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T7"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Индексиране"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "списъци"
+      },
+      {
+        "@value": "кортежи"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "58-70"
+      }
+    ]
+  },
+  {
+    "@id": "_:T7.1",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T6.10"
+      },
+      {
+        "@id": "_:T5.2"
+      },
+      {
+        "@id": "_:T5.1"
+      },
+      {
+        "@id": "_:T6.5"
+      },
+      {
+        "@id": "_:T6.7"
+      },
+      {
+        "@id": "_:T1"
+      },
+      {
+        "@id": "_:T6.2"
+      },
+      {
+        "@id": "_:T6.1"
+      },
+      {
+        "@id": "_:T3"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T7"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Вградени съставни типове в Python"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "списъци"
+      },
+      {
+        "@value": "кортежи"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "58-70"
+      }
+    ]
+  },
+  {
+    "@id": "_:T7",
+    "@type": [
+      "http://oerschema.org/Course"
+    ]
+  },
+  {
+    "@id": "_:T6.10",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T1"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T6"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Разработване на Python приложения"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "8-10"
+      }
+    ]
+  },
+  {
+    "@id": "_:T5.2",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T5.1"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T5"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Блокове"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "блок"
+      },
+      {
+        "@value": "конструкции_за_управление"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "10-14"
+      }
+    ]
+  },
+  {
+    "@id": "_:T5",
+    "@type": [
+      "http://oerschema.org/Course"
+    ]
+  },
+  {
+    "@id": "_:T5.1",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T3.4"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T5"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Структури за управление"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "конструкции_за_управление"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "8-10"
+      }
+    ]
+  },
+  {
+    "@id": "_:T6.5",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T1.4"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T6"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Python програми"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "10-14"
+      }
+    ]
+  },
+  {
+    "@id": "_:T1.4",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T1.2"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T1"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Етапи на създаване на програма"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "14-18"
+      }
+    ]
+  },
+  {
+    "@id": "_:T6.7",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T5.2"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T6"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Блокове в Python"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "8-10"
+      }
+    ]
+  },
+  {
+    "@id": "_:T6.2",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T4"
+      },
+      {
+        "@id": "_:T3"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T6"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Tипове данни в Python"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "14-18"
+      }
+    ]
+  },
+  {
+    "@id": "_:T4",
+    "@type": [
+      "http://oerschema.org/Course"
+    ]
+  },
+  {
+    "@id": "_:T6.1",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T1.4"
+      },
+      {
+        "@id": "_:T1.6"
+      },
+      {
+        "@id": "_:T1.1"
+      },
+      {
+        "@id": "_:T1.2"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T6"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Какво е Python"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "18-58"
+      }
+    ]
+  },
+  {
+    "@id": "_:T1.6",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T1.3"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T1"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Абстрактизация"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "14-18"
+      }
+    ]
+  },
+  {
+    "@id": "_:T1.3",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T1.2"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T1"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Разширения на езика"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "10-14"
+      }
+    ]
+  },
+  {
+    "@id": "_:T7.2",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T4"
+      },
+      {
+        "@id": "_:T7.1"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T7"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Операции върху редици"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "кортежи"
+      },
+      {
+        "@value": "списъци"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "58-70"
+      }
+    ]
+  },
+  {
+    "@id": "_:T7.21",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T5"
+      },
+      {
+        "@id": "_:T3"
+      },
+      {
+        "@id": "_:T7.17"
+      },
+      {
+        "@id": "_:T7.4"
+      },
+      {
+        "@id": "_:T7.8"
+      },
+      {
+        "@id": "_:T6"
+      },
+      {
+        "@id": "_:T7.14"
+      },
+      {
+        "@id": "_:T7.12"
+      },
+      {
+        "@id": "_:T1"
+      },
+      {
+        "@id": "_:T7.1"
+      },
+      {
+        "@id": "_:T7.15"
+      },
+      {
+        "@id": "_:T7.6"
+      },
+      {
+        "@id": "_:T7.16"
+      },
+      {
+        "@id": "_:T7.5"
+      },
+      {
+        "@id": "_:T7.13"
+      },
+      {
+        "@id": "_:T7.3"
+      },
+      {
+        "@id": "_:T7.11"
+      },
+      {
+        "@id": "_:T7.7"
+      },
+      {
+        "@id": "_:T4"
+      },
+      {
+        "@id": "_:T7.10"
+      },
+      {
+        "@id": "_:T7.9"
+      },
+      {
+        "@id": "_:T7.18"
+      },
+      {
+        "@id": "_:T7.19"
+      },
+      {
+        "@id": "_:T7.2"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T7"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Управляван от условие цикъл while"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "списъци"
+      },
+      {
+        "@value": "кортежи"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "18-58"
+      }
+    ]
+  },
+  {
+    "@id": "_:T7.17",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T7.3"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T7"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Функции any и all"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "списъци"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "10-14"
+      }
+    ]
+  },
+  {
+    "@id": "_:T7.4",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T7.3"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T7"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Отрязъци"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "списъци"
+      },
+      {
+        "@value": "кортежи"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "10-14"
+      }
+    ]
+  },
+  {
+    "@id": "_:T7.8",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T7.3"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T7"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Умножение на редица"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "кортежи"
+      },
+      {
+        "@value": "списъци"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "58-70"
+      }
+    ]
+  },
+  {
+    "@id": "_:T7.14",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T7.5"
+      },
+      {
+        "@id": "_:T7.4"
+      },
+      {
+        "@id": "_:T7.3"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T7"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Присвояване на отрязък"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "списъци"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "18-58"
+      }
+    ]
+  },
+  {
+    "@id": "_:T7.5",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T7.4"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T7"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Отрязъци от края"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "списъци"
+      },
+      {
+        "@value": "кортежи"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "14-18"
+      }
+    ]
+  },
+  {
+    "@id": "_:T7.12",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T7.3"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T7"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Създаване на списъци"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "списъци"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "8-10"
+      }
+    ]
+  },
+  {
+    "@id": "_:T7.15",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T7.3"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T7"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Копиране"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "списъци"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "8-10"
+      }
+    ]
+  },
+  {
+    "@id": "_:T7.6",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T7.5"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T7"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "По-големи стъпки"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "списъци"
+      },
+      {
+        "@value": "кортежи"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "10-14"
+      }
+    ]
+  },
+  {
+    "@id": "_:T7.13",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T7.3"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T7"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Основни операции със списъци"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "списъци"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "58-70"
+      }
+    ]
+  },
+  {
+    "@id": "_:T7.11",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T7.3"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T7"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Дължина, мин макс"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "списъци"
+      },
+      {
+        "@value": "кортежи"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "58-70"
+      }
+    ]
+  },
+  {
+    "@id": "_:T7.7",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T7.3"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T7"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Добавяне на редици"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "списъци"
+      },
+      {
+        "@value": "кортежи"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "18-58"
+      }
+    ]
+  },
+  {
+    "@id": "_:T7.10",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T7.3"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T7"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Принадлежност"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "списъци"
+      },
+      {
+        "@value": "кортежи"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "8-10"
+      }
+    ]
+  },
+  {
+    "@id": "_:T7.9",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T7.3"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T7"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "None"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "списъци"
+      },
+      {
+        "@value": "кортежи"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "58-70"
+      }
+    ]
+  },
+  {
+    "@id": "_:T7.18",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T2"
+      },
+      {
+        "@id": "_:T7.3"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T7"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Производителност на списъци"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "списъци"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "58-70"
+      }
+    ]
+  },
+  {
+    "@id": "_:T7.19",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T7.7"
+      },
+      {
+        "@id": "_:T7.13"
+      },
+      {
+        "@id": "_:T7.5"
+      },
+      {
+        "@id": "_:T7.4"
+      },
+      {
+        "@id": "_:T7.14"
+      },
+      {
+        "@id": "_:T7.11"
+      },
+      {
+        "@id": "_:T7.8"
+      },
+      {
+        "@id": "_:T7.12"
+      },
+      {
+        "@id": "_:T7.10"
+      },
+      {
+        "@id": "_:T7.9"
+      },
+      {
+        "@id": "_:T7.6"
+      },
+      {
+        "@id": "_:T7.15"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T7"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Кортежи"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "списъци"
+      },
+      {
+        "@value": "кортежи"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "18-58"
+      }
+    ]
+  },
+  {
+    "@id": "_:T7.23",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T7.20"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T7"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Прекъсване на цикъл с break"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "списъци"
+      },
+      {
+        "@value": "кортежи"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "10-14"
+      }
+    ]
+  },
+  {
+    "@id": "_:T7.20",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T7.15"
+      },
+      {
+        "@id": "_:T7.6"
+      },
+      {
+        "@id": "_:T7.16"
+      },
+      {
+        "@id": "_:T7.5"
+      },
+      {
+        "@id": "_:T7.13"
+      },
+      {
+        "@id": "_:T7.3"
+      },
+      {
+        "@id": "_:T7.11"
+      },
+      {
+        "@id": "_:T7.7"
+      },
+      {
+        "@id": "_:T4"
+      },
+      {
+        "@id": "_:T7.10"
+      },
+      {
+        "@id": "_:T7.9"
+      },
+      {
+        "@id": "_:T7.18"
+      },
+      {
+        "@id": "_:T7.19"
+      },
+      {
+        "@id": "_:T3"
+      },
+      {
+        "@id": "_:T7.2"
+      },
+      {
+        "@id": "_:T5"
+      },
+      {
+        "@id": "_:T7.17"
+      },
+      {
+        "@id": "_:T7.4"
+      },
+      {
+        "@id": "_:T7.8"
+      },
+      {
+        "@id": "_:T6"
+      },
+      {
+        "@id": "_:T7.14"
+      },
+      {
+        "@id": "_:T7.12"
+      },
+      {
+        "@id": "_:T1"
+      },
+      {
+        "@id": "_:T7.1"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T7"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Управляван от стойности цикъл for"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "списъци"
+      },
+      {
+        "@value": "кортежи"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "8-10"
+      }
+    ]
+  },
+  {
+    "@id": "_:T7.25",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T7.20"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T7"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "else клауза в цикъл"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "списъци"
+      },
+      {
+        "@value": "кортежи"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "18-58"
+      }
+    ]
+  },
+  {
+    "@id": "_:T7.22",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T7.20"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T7"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Номерирани итерации"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "кортежи"
+      },
+      {
+        "@value": "списъци"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "10-14"
+      }
+    ]
+  },
+  {
+    "@id": "_:T7.24",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T7.20"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T7"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Прекъсване на итерация с continue"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "кортежи"
+      },
+      {
+        "@value": "списъци"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "10-14"
+      }
+    ]
+  },
+  {
+    "@id": "_:T7.29",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T7.19"
+      },
+      {
+        "@id": "_:T7.23"
+      },
+      {
+        "@id": "_:T7.25"
+      },
+      {
+        "@id": "_:T7.2"
+      },
+      {
+        "@id": "_:T7.20"
+      },
+      {
+        "@id": "_:T7.17"
+      },
+      {
+        "@id": "_:T7.22"
+      },
+      {
+        "@id": "_:T7.4"
+      },
+      {
+        "@id": "_:T7.8"
+      },
+      {
+        "@id": "_:T7.14"
+      },
+      {
+        "@id": "_:T7.12"
+      },
+      {
+        "@id": "_:T7.1"
+      },
+      {
+        "@id": "_:T7.24"
+      },
+      {
+        "@id": "_:T7.6"
+      },
+      {
+        "@id": "_:T7.15"
+      },
+      {
+        "@id": "_:T7.16"
+      },
+      {
+        "@id": "_:T7.21"
+      },
+      {
+        "@id": "_:T7.3"
+      },
+      {
+        "@id": "_:T7.7"
+      },
+      {
+        "@id": "_:T7.5"
+      },
+      {
+        "@id": "_:T7.13"
+      },
+      {
+        "@id": "_:T7.11"
+      },
+      {
+        "@id": "_:T7.10"
+      },
+      {
+        "@id": "_:T7.18"
+      },
+      {
+        "@id": "_:T7.9"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T7"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Задача 2"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      },
+      {
+        "@value": "задача"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "списъци"
+      },
+      {
+        "@value": "кортежи"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "14-18"
+      }
+    ]
+  },
+  {
+    "@id": "_:T7.27",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T7.20"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T7"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Многомерни редици"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "кортежи"
+      },
+      {
+        "@value": "списъци"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "8-10"
+      }
+    ]
+  },
+  {
+    "@id": "_:T4.4",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T4.1"
+      },
+      {
+        "@id": "_:T3.2"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T4"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Символни низове тип Паскал"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "C++"
+      },
+      {
+        "@value": "Pascal"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "string"
+      },
+      {
+        "@value": "char"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "типове"
+      },
+      {
+        "@value": "променливи"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "58-70"
+      }
+    ]
+  },
+  {
+    "@id": "_:T4.1",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T3.2"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T4"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Символен тип"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "char"
+      },
+      {
+        "@value": "string"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "променливи"
+      },
+      {
+        "@value": "типове"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "8-10"
+      }
+    ]
+  },
+  {
+    "@id": "_:T5.6",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T5.3"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T5"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "цикъл с предусловие"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "while"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "конструкции_за_управление"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "8-10"
+      }
+    ]
+  },
+  {
+    "@id": "_:T5.3",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T5.1"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T5"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Избор на алтернатива"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "if"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "конструкции_за_управление"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "8-10"
+      }
+    ]
+  },
+  {
+    "@id": "_:T6.13",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T6.3"
+      },
+      {
+        "@id": "_:T3.5"
+      },
+      {
+        "@id": "_:T3.4"
+      },
+      {
+        "@id": "_:T3.6"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T6"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Задача 3"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      },
+      {
+        "@value": "задача"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "8-10"
+      }
+    ]
+  },
+  {
+    "@id": "_:T6.3",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T2"
+      },
+      {
+        "@id": "_:T1"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T6"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Вход-изход в Python"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "8-10"
+      }
+    ]
+  },
+  {
+    "@id": "_:T3.6",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T3.5"
+      },
+      {
+        "@id": "_:T3.4"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T3"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Аритметични операции"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "float"
+      },
+      {
+        "@value": "int"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "променливи"
+      },
+      {
+        "@value": "базови_оператори"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "8-10"
+      }
+    ]
+  },
+  {
+    "@id": "_:T6.11",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T6.3"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T6"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Задача 1"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      },
+      {
+        "@value": "задача"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "10-14"
+      }
+    ]
+  },
+  {
+    "@id": "_:T7.26",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T7.20"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T7"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Генериране на списъци"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "списъци"
+      },
+      {
+        "@value": "кортежи"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "10-14"
+      }
+    ]
+  },
+  {
+    "@id": "_:T7.31",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T7.25"
+      },
+      {
+        "@id": "_:T7.2"
+      },
+      {
+        "@id": "_:T7.20"
+      },
+      {
+        "@id": "_:T7.17"
+      },
+      {
+        "@id": "_:T7.4"
+      },
+      {
+        "@id": "_:T7.22"
+      },
+      {
+        "@id": "_:T7.8"
+      },
+      {
+        "@id": "_:T7.14"
+      },
+      {
+        "@id": "_:T7.12"
+      },
+      {
+        "@id": "_:T7.1"
+      },
+      {
+        "@id": "_:T7.24"
+      },
+      {
+        "@id": "_:T7.6"
+      },
+      {
+        "@id": "_:T7.15"
+      },
+      {
+        "@id": "_:T7.23"
+      },
+      {
+        "@id": "_:T7.16"
+      },
+      {
+        "@id": "_:T7.21"
+      },
+      {
+        "@id": "_:T7.13"
+      },
+      {
+        "@id": "_:T7.5"
+      },
+      {
+        "@id": "_:T7.3"
+      },
+      {
+        "@id": "_:T7.11"
+      },
+      {
+        "@id": "_:T7.7"
+      },
+      {
+        "@id": "_:T7.18"
+      },
+      {
+        "@id": "_:T7.10"
+      },
+      {
+        "@id": "_:T7.9"
+      },
+      {
+        "@id": "_:T7.19"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T7"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Задача 4"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "задача"
+      },
+      {
+        "@value": "Python_основи"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "кортежи"
+      },
+      {
+        "@value": "списъци"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "8-10"
+      }
+    ]
+  },
+  {
+    "@id": "_:T7.30",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T7.19"
+      },
+      {
+        "@id": "_:T7.23"
+      },
+      {
+        "@id": "_:T7.25"
+      },
+      {
+        "@id": "_:T7.2"
+      },
+      {
+        "@id": "_:T7.20"
+      },
+      {
+        "@id": "_:T7.17"
+      },
+      {
+        "@id": "_:T7.4"
+      },
+      {
+        "@id": "_:T7.22"
+      },
+      {
+        "@id": "_:T7.8"
+      },
+      {
+        "@id": "_:T7.14"
+      },
+      {
+        "@id": "_:T7.12"
+      },
+      {
+        "@id": "_:T7.1"
+      },
+      {
+        "@id": "_:T7.24"
+      },
+      {
+        "@id": "_:T7.6"
+      },
+      {
+        "@id": "_:T7.15"
+      },
+      {
+        "@id": "_:T7.16"
+      },
+      {
+        "@id": "_:T7.21"
+      },
+      {
+        "@id": "_:T7.5"
+      },
+      {
+        "@id": "_:T7.13"
+      },
+      {
+        "@id": "_:T7.3"
+      },
+      {
+        "@id": "_:T7.7"
+      },
+      {
+        "@id": "_:T7.11"
+      },
+      {
+        "@id": "_:T7.10"
+      },
+      {
+        "@id": "_:T7.9"
+      },
+      {
+        "@id": "_:T7.18"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T7"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Задача 3"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      },
+      {
+        "@value": "задача"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "списъци"
+      },
+      {
+        "@value": "кортежи"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "14-18"
+      }
+    ]
+  },
+  {
+    "@id": "_:T5.8",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T5.3"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T5"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "цикъл с брояч"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "for"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "конструкции_за_управление"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "8-10"
+      }
+    ]
+  },
+  {
+    "@id": "_:T6.15",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T6.7"
+      },
+      {
+        "@id": "_:T3.4"
+      },
+      {
+        "@id": "_:T3.6"
+      },
+      {
+        "@id": "_:T6.3"
+      },
+      {
+        "@id": "_:T5.4"
+      },
+      {
+        "@id": "_:T5.3"
+      },
+      {
+        "@id": "_:T3.5"
+      },
+      {
+        "@id": "_:T5.2"
+      },
+      {
+        "@id": "_:T6.9"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T6"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Задача 5"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      },
+      {
+        "@value": "задача"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "58-70"
+      }
+    ]
+  },
+  {
+    "@id": "_:T5.4",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T5.2"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T5"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Избор на Вариант"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "if"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "конструкции_за_управление"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "8-10"
+      }
+    ]
+  },
+  {
+    "@id": "_:T6.9",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T3.3"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T6"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Действие на булевите оператори"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "10-14"
+      }
+    ]
+  },
+  {
+    "@id": "_:T3.3",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T3.2"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T3"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Булев тип"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "boolean"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "типове"
+      },
+      {
+        "@value": "променливи"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "14-18"
+      }
+    ]
+  },
+  {
+    "@id": "_:T4.2",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T3.2"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T4"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Кодови таблици"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "char"
+      },
+      {
+        "@value": "string"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "променливи"
+      },
+      {
+        "@value": "типове"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "8-10"
+      }
+    ]
+  },
+  {
+    "@id": "_:T6.14",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T5.3"
+      },
+      {
+        "@id": "_:T3.5"
+      },
+      {
+        "@id": "_:T5.2"
+      },
+      {
+        "@id": "_:T3.4"
+      },
+      {
+        "@id": "_:T3.6"
+      },
+      {
+        "@id": "_:T6.8"
+      },
+      {
+        "@id": "_:T6.3"
+      },
+      {
+        "@id": "_:T5.4"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T6"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Задача 4"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      },
+      {
+        "@value": "задача"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "8-10"
+      }
+    ]
+  },
+  {
+    "@id": "_:T6.8",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T5.5"
+      },
+      {
+        "@id": "_:T5.4"
+      },
+      {
+        "@id": "_:T5.3"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T6"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Условни оператори в Python"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "if"
+      },
+      {
+        "@value": "Python_основи"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "10-14"
+      }
+    ]
+  },
+  {
+    "@id": "_:T5.5",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T5.3"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T5"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "вложени условни оператори"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "if"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "конструкции_за_управление"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "8-10"
+      }
+    ]
+  },
+  {
+    "@id": "_:T4.3",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T4.1"
+      },
+      {
+        "@id": "_:T3.2"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T4"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Символни низове тип С"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "C"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "char"
+      },
+      {
+        "@value": "string"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "променливи"
+      },
+      {
+        "@value": "типове"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "18-58"
+      }
+    ]
+  },
+  {
+    "@id": "_:T8.3",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T6"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T8"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Методи"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "речници"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "58-71"
+      },
+      {
+        "@value": "8-10"
+      }
+    ]
+  },
+  {
+    "@id": "_:T6.4",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T1.3"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T6"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Модули в Python"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "8-10"
+      }
+    ]
+  },
+  {
+    "@id": "_:T6.12",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T3.4"
+      },
+      {
+        "@id": "_:T6.3"
+      },
+      {
+        "@id": "_:T3.6"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T6"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Задача 2"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      },
+      {
+        "@value": "задача"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "58-70"
+      }
+    ]
+  },
+  {
+    "@id": "_:T5.7",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T5.3"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T5"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "цикъл със следусловие"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "do_while"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "конструкции_за_управление"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "8-10"
+      }
+    ]
+  },
+  {
+    "@id": "_:T2.2",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T2.1"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T2"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Свойства на алгоритъма"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "алгоритми"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "8-10"
+      }
+    ]
+  },
+  {
+    "@id": "_:T2.1",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T1"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T2"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Какво е алгоритъм"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "алгоритми"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "14-18"
+      },
+      {
+        "@value": "10-14"
+      }
+    ]
+  },
+  {
+    "@id": "_:T8.4",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T6"
+      },
+      {
+        "@id": "_:T7"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T8"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Сравнение на речници и списъци"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "речници"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "58-72"
+      },
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "14-18"
+      }
+    ]
+  },
+  {
+    "@id": "_:T8.2",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T7.12"
+      },
+      {
+        "@id": "_:T6"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T8"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Създаване на речник"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "всички"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "речници"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "8-10"
+      },
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "10-14"
+      },
+      {
+        "@value": "14-18"
+      }
+    ]
+  },
+  {
+    "@id": "_:T8.5",
+    "@type": [
+      "http://oerschema.org/LearningComponent"
+    ],
+    "http://oerschema.org/coursePrerequisites": [
+      {
+        "@id": "_:T7"
+      },
+      {
+        "@id": "_:T6"
+      }
+    ],
+    "http://oerschema.org/forCourse": [
+      {
+        "@id": "_:T8"
+      }
+    ],
+    "http://oerschema.org/forTopic": [
+      {
+        "@value": "Програмиране"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Пример за речници с графи"
+      },
+      {
+        "@value": "Пример за речници с телефонен указател"
+      }
+    ],
+    "https://schema.org/educationalLevel": [
+      {
+        "@value": "статистици"
+      },
+      {
+        "@value": "биолози"
+      },
+      {
+        "@value": "начинаещи"
+      },
+      {
+        "@value": "computer scientists"
+      },
+      {
+        "@value": "data scientists"
+      },
+      {
+        "@value": "математици"
+      }
+    ],
+    "https://schema.org/inLanguage": [
+      {
+        "@value": "Python"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@value": "Python_основи"
+      }
+    ],
+    "https://schema.org/teaches": [
+      {
+        "@value": "речници"
+      }
+    ],
+    "https://schema.org/typicalAgeRange": [
+      {
+        "@value": "18-58"
+      },
+      {
+        "@value": "58-70"
+      },
+      {
+        "@value": "14-18"
+      }
+    ]
+  }
+]
