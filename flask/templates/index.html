@@ -1,0 +1,64 @@
+{% extends 'base.html' %} {% block content %}
+
+<main class="container">
+  <form class="row g-3">
+    <div class="col-12">
+      <label for="inputAge" class="form-label" aria-required="true">Age</label>
+      <select id="inputAge" class="form-select" name="age" required>
+        {% for age in ages %}
+        <option>{{age}}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <div class="col-12">
+      <label for="inputTopic" class="form-label" aria-required="true"
+        >Topic</label
+      >
+      <select id="inputTopic" class="form-select" name="topic" required>
+        {% for topic in topics %}
+        <option>{{topic}}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <div class="col-12">
+      <label for="inputLanguages" class="form-label" aria-required="true"
+        >Languages</label
+      >
+      <select id="inputLanguages" class="form-select" name="lang" required>
+        {% for lang in languages %}
+        <option>{{lang}}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <div class="col-12">
+      <label for="inputField" class="form-label" aria-required="true"
+        >Education field</label
+      >
+      <select id="inputField" class="form-select" name="field" required>
+        {% for field in educations %}
+        <option>{{field}}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <div class="col-12">
+      <label for="inputConcept" class="form-label" aria-required="true"
+        >Concepts</label
+      >
+      <select id="inputConcept" class="form-select" name="concept" required>
+        {% for concept in concepts %}
+        <option>{{concept}}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+  </form>
+</main>
+
+{% endblock %}

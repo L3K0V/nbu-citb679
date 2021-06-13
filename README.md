@@ -76,3 +76,11 @@ Example usage:
 ```
 py edu_graph.py concepts data/rdf.json --format json-ld
 ```
+
+## Frontend
+
+```
+$ export FLASK_APP=flask/app
+$ export FLASK_ENV=development
+$ flask run
+```

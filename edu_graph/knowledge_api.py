@@ -1,7 +1,7 @@
 import inquirer as inq
 
 
-class KnoledgeApi:
+class KnowledgeApi:
     def __init__(self, library):
         self.library = library
         self.user_data = {}

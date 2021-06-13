@@ -1,14 +1,14 @@
 import click
 import json
 
-from .knowledge_api import KnoledgeApi
-from .knowledge_library import KnowledgeLibrary
+from .knowledge_api import KnowledgeApi as KnowledgeApi
+from .knowledge_library import KnowledgeLibrary as KnowledgeLibrary
 
 
 def __list(filename, format, field, print):
     library = KnowledgeLibrary()
     library.load(filename, format)
-    api = KnoledgeApi(library)
+    api = KnowledgeApi(library)
 
     method = f'list_{field}'
 
