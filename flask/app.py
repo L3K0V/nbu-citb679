@@ -20,29 +20,24 @@ api = KnowledgeApi(library)
 @app.route('/', methods=['GET', 'POST'])
 def index():
 
-    if request.method == 'POST':
-        age = request.form.get('age')
-        topic = request.form.get('topic')
-        lang = request.form.get('lang')
+    api.set_age(request.args.get('age', None))
+    api.set_topic(request.args.get('topic', None))
+    api.set_lang(request.args.get('language', None))
+    api.set_education(request.args.get('edu_level', None))
+    api.set_concept(request.args.get('concept', None))
+    material = request.args.get('material', None)
 
     return render_template(
         'index.html',
         user=api.user_data,
-        ages=api.list_ages(),
-        topics=api.list_topics(),
-        concepts=api.list_concepts(),
-        languages=api.list_languages(),
-        educations=api.list_educations())
-
-
-@app.route('/list/')
-@app.route('/list/<type>')
-def hello(type=None):
-
-    results = []
-
-    if type:
-        method = f'list_{type}'
-        results = getattr(api, method)()
-
-    return render_template('list.html', results=results)
+        formdata={
+            "ages": api.list_ages(),
+            "topics": api.list_topics(),
+            "concepts": api.list_concepts(),
+            "languages": api.list_languages(),
+            "educations": api.list_educations(),
+        },
+        material=material,
+        results=api.search(),
+        deps=api.search_deps(material)
+    )
