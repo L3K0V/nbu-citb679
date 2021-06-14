@@ -1,7 +1,8 @@
 import inquirer as inq
+from rdflib.term import BNode
 
 
-class KnoledgeApi:
+class KnowledgeApi:
     def __init__(self, library):
         self.library = library
         self.user_data = {}
@@ -197,6 +198,25 @@ class KnoledgeApi:
 
         return result_set
 
+    def search_deps(self, node: str = None):
+
+        if not node:
+            return []
+
+        result_set = self.library.graph.query(
+            """
+            SELECT DISTINCT ?material ?course ?title
+            WHERE {
+                ?m oer:coursePrerequisites* ?material .
+                ?material rdfs:label ?title .
+                ?material oer:forCourse ?course .
+            }
+            ORDER BY ?material
+            """, initBindings={'m': BNode(node.strip())}
+        )
+
+        return result_set
+
     def list_ages(self):
         available_ages = self.library.graph.query(
             """
@@ -215,9 +235,12 @@ class KnoledgeApi:
 
         return ages
 
-    def list_topics(self):
+    def list_topics(self, filter: bool = True):
 
-        query = self.__build_query()
+        if filter:
+            query = self.__build_query()
+        else:
+            query = []
 
         available_topics = self.library.graph.query(
             """
@@ -237,9 +260,12 @@ class KnoledgeApi:
 
         return topics
 
-    def list_languages(self):
+    def list_languages(self, filter: bool = True):
 
-        query = self.__build_query()
+        if filter:
+            query = self.__build_query()
+        else:
+            query = []
 
         available_languages = self.library.graph.query(
             """
@@ -259,9 +285,12 @@ class KnoledgeApi:
 
         return languages
 
-    def list_concepts(self):
+    def list_concepts(self, filter: bool = True):
 
-        query = self.__build_query()
+        if filter:
+            query = self.__build_query()
+        else:
+            query = []
 
         available_concepts = self.library.graph.query(
             """
@@ -281,9 +310,12 @@ class KnoledgeApi:
 
         return concepts
 
-    def list_educations(self):
+    def list_educations(self, filter: bool = True):
 
-        query = self.__build_query()
+        if filter:
+            query = self.__build_query()
+        else:
+            query = []
 
         available_levels = self.library.graph.query(
             """

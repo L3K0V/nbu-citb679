@@ -9,7 +9,7 @@ def test():
     library.load("data/rdf.json", "json-ld")
     # library.generate('data/1619073985303267.ods')
 
-    api = edu_graph.KnoledgeApi(library)
+    api = edu_graph.KnowledgeApi(library)
     api.prompt_for_user_profile()
     pp.pprint(api.user_data)
 
@@ -22,4 +22,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    test()

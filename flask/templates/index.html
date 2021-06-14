@@ -1,0 +1,92 @@
+{% extends 'base.html' %} {% block content %}
+<main class="container p-3">
+
+  <section class="row">
+    <div class="col-{% if deps|length > 0 %}4{% else %}6{% endif %}">
+      <h3>Search</h3>
+      <form>
+        <div class="row mb-3">
+          <label for="inputAge" class="col-sm-4 col-form-label" aria-required="true">Age</label>
+          <div class="col-sm-8">
+            <select id="inputAge" class="form-select" name="age" required>
+              {% for age in formdata.ages %}
+              <option {% if user.age|lower == age|lower %} selected {% endif %}>{{age}}</option>
+              {% endfor %}
+            </select>
+          </div>
+        </div>
+        {% if user.age %}
+        <div class="row mb-3">
+          <label for="inputTopic" class="col-sm-4 col-form-label" aria-required="true">Topic</label>
+          <div class="col-sm-8">
+            <select id="inputTopic" class="form-select" name="topic" required>
+              {% for topic in formdata.topics %}
+              <option {% if user.topic|lower == topic|lower %} selected {% endif %}>{{topic}}</option>
+              {% endfor %}
+            </select>
+          </div>
+        </div>
+        {% endif %}
+        {% if user.topic %}
+        <div class="row mb-3">
+          <label for="inputLanguages" class="col-sm-4 col-form-label" aria-required="true">Languages</label>
+          <div class="col-sm-8">
+            <select id="inputLanguages" class="form-select" name="language" required>
+              {% for language in formdata.languages %}
+              <option {% if user.language|lower == language|lower %} selected {% endif %}>{{language}}</option>
+              {% endfor %}
+            </select>
+          </div>
+        </div>
+        {% endif %}
+        {% if user.language %}
+        <div class="row mb-3">
+          <label for="inputField" class="col-sm-4 col-form-label" aria-required="true">Education field</label>
+          <div class="col-sm-8">
+            <select id="inputField" class="form-select" name="edu_level" required>
+              {% for field in formdata.educations %}
+              <option {% if user.edu_level|lower == field|lower %} selected {% endif %}>{{field}}</option>
+              {% endfor %}
+            </select>
+          </div>
+        </div>
+        {% endif %}
+        {% if user.edu_level %}
+        <div class="row mb-3">
+          <label for="inputConcept" class="col-sm-4 col-form-label" aria-required="true">Concept</label>
+          <div class="col-sm-8">
+            <select id="inputConcept" class="form-select" name="concept" required>
+              {% for concept in formdata.concepts %}
+              <option {% if user.concept|lower == concept|lower %} selected {% endif %}>{{concept}}</option>
+              {% endfor %}
+            </select>
+          </div>
+        </div>
+        {% endif %}
+        <button type="submit" class="btn btn-primary">Search</button>
+        <a href="/" type="reset" class="btn btn-danger">Reset</a>
+      </form>
+    </div>
+    <div class="col-{% if deps|length > 0 %}4{% else %}6{% endif %}">
+      <h3>Materials <span class="badge rounded-pill bg-primary">{{results|length}}</span></h3>
+      <div class="list-group">
+        {% for item in results %}
+           <a href="{{url_for('index', age=user.age,topic=user.topic,language=user.language, edu_level=user.edu_level,concept=user.concept,material=item[0])}}" 
+            class="list-group-item list-group-item-action {% if material|lower == item[0]|lower %} active {% endif %}">{{item[0]}} - {{item[2]}}</a>
+        {% endfor %}
+      </div>
+    </div>
+    {% if deps|length > 0 %}
+    <div class="col-4">
+      <h3>Prerequisites <span class="badge rounded-pill bg-primary">{{deps|length}}</span></h3>
+      <div class="list-group">
+        {% for item in deps %}
+          <a href="#" class="list-group-item list-group-item-action">{{item[0]}} - {{item[2]}}</a>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+  </section>
+</main>
+
+{% endblock %}

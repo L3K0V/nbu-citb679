@@ -1,5 +1,8 @@
 # nbu-citb679
 
+![image](https://user-images.githubusercontent.com/2267270/121960611-0098a600-cd6f-11eb-9d4e-7ec43d9dd1cc.png)
+
+
 ## Getting started
 
 Create virtual environment via:
@@ -75,4 +78,12 @@ Example usage:
 
 ```
 py edu_graph.py concepts data/rdf.json --format json-ld
+```
+
+## Frontend
+
+```
+$ export FLASK_APP=flask/app
+$ export FLASK_ENV=development
+$ flask run
 ```
