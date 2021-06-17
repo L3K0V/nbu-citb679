@@ -13,6 +13,19 @@ class KnowledgeApi:
         else:
             return '?m sdo:inLanguage "' + self.user_data['language'] + '"'
 
+    def __concept_where_clause(self):
+        if (not self.user_data['concept'] or self.user_data['concept'] == 'Non-specific'):
+            return 'FILTER NOT EXISTS {?m sdo:teaches ?concept}'
+        else:
+            return '?m sdo:teaches "' + self.user_data['concept'] + '"'
+
+    def __edu_level_where_clause(self):
+        if (not self.user_data['edu_level'] or self.user_data['edu_level'] == 'None'):
+            return 'FILTER NOT EXISTS {?m sdo:educationalLevel ?edu_level}'
+        else:
+            return '?m sdo:educationalLevel "' + self.user_data['edu_level'] + '"'
+
+
     def __ask_for_age(self):
         ages = self.list_ages()
 
@@ -76,6 +89,7 @@ class KnowledgeApi:
         self.user_data.update(inq.prompt(questions))
 
     def __ask_for_material(self):
+
         available_materials = self.library.graph.query(
             """
             SELECT DISTINCT ?m ?course ?title
@@ -83,8 +97,8 @@ class KnowledgeApi:
                 ?m sdo:typicalAgeRange '""" + self.user_data['age'] + """' .
                 ?m oer:forTopic '""" + self.user_data['topic'] + """' .
                 """ + self.__language_where_clause() + """ .
-                ?m sdo:teaches '""" + self.user_data['concept'] + """' .
-                ?m sdo:educationalLevel '""" + self.user_data['edu_level'] + """' .
+                """ + self.__concept_where_clause() + """ .
+                """ + self.__edu_level_where_clause() + """ .
                 ?m rdfs:label ?title .
                 ?m oer:forCourse ?course .
             }
@@ -146,11 +160,9 @@ class KnowledgeApi:
         if (self.user_data.get('language')):
             query.append("""""" + self.__language_where_clause() + """ .""")
         if (self.user_data.get('concept')):
-            query.append(""" ?m sdo:teaches '""" +
-                         self.user_data['concept'] + """' .""")
+            query.append("""""" + self.__concept_where_clause() + """ .""")
         if (self.user_data.get('edu_level')):
-            query.append("""?m sdo:educationalLevel '""" +
-                         self.user_data['edu_level'] + """' .""")
+            query.append("""""" + self.__edu_level_where_clause() + """ .""")
 
         return query
 
@@ -278,7 +290,21 @@ class KnowledgeApi:
             """
         )
 
-        languages = ['Non-specific']
+        languages = []
+
+        entries_without_language = self.library.graph.query(
+            """
+            SELECT DISTINCT ?language
+            WHERE {
+                """ + ''.join(query) + """
+                FILTER NOT EXISTS {?m sdo:inLanguage ?language} .
+            }
+            ORDER BY ?language
+            """
+        )
+
+        if len(entries_without_language) > 0:
+            languages = ['Non-specific']
 
         for row in available_languages:
             languages.append(row[0])
@@ -305,6 +331,20 @@ class KnowledgeApi:
 
         concepts = []
 
+        entries_without_concepts = self.library.graph.query(
+            """
+            SELECT DISTINCT ?concept
+            WHERE {
+                """ + ''.join(query) + """
+                FILTER NOT EXISTS {?m sdo:teaches ?concept} .
+            }
+            ORDER BY ?concept
+            """
+        )
+
+        if len(entries_without_concepts) > 0:
+            concepts = ['Non-specific']
+
         for row in available_concepts:
             concepts.append(row[0])
 
@@ -319,16 +359,30 @@ class KnowledgeApi:
 
         available_levels = self.library.graph.query(
             """
-            SELECT DISTINCT ?eduLevel
+            SELECT DISTINCT ?edu_level
             WHERE {
                 """ + ''.join(query) + """
-                ?m sdo:educationalLevel ?eduLevel .
+                ?m sdo:educationalLevel ?edu_level .
             }
-            ORDER BY ?eduLevel
+            ORDER BY ?edu_level
             """
         )
 
         edu_levels = []
+
+        entries_without_edu_levels = self.library.graph.query(
+            """
+            SELECT DISTINCT ?edu_level
+            WHERE {
+                """ + ''.join(query) + """
+                FILTER NOT EXISTS {?m sdo:educationalLevel ?edu_level} .
+            }
+            ORDER BY ?edu_level
+            """
+        )
+
+        if len(entries_without_edu_levels) > 0:
+            edu_levels = ['Non-specific']
 
         for row in available_levels:
             edu_levels.append(row[0])
