@@ -1,5 +1,6 @@
 import inquirer as inq
 from rdflib.term import BNode
+import pprint as pp
 
 
 class KnowledgeApi:
@@ -137,6 +138,8 @@ class KnowledgeApi:
         course_deps = []
 
         for row in course_deps_result_set:
+            if node in row[0]:
+                continue
             course_deps.append((str(row[1]), row[0]))
 
         questions = [
@@ -175,6 +178,31 @@ class KnowledgeApi:
         self.__ask_for_level()
         self.__ask_for_material()
         self.__ask_for_already_known()
+
+    def get_learning_path_by_criteria(self):
+        node, course, title = self.user_data['edu_material']
+        
+        qRes = self.library.graph.query(
+            """
+            SELECT DISTINCT ?material ?title
+            WHERE {
+                ?m oer:coursePrerequisites* ?material .
+                ?material rdfs:label ?title .
+            }
+            ORDER BY ?material
+            """, initBindings={'m': node}
+        )
+
+        course_materials_to_learn = []
+        for row in qRes:
+            if row[0] in self.user_data['already_known']:
+                continue
+            course_materials_to_learn.append(row[0] + " " + row[1])
+            
+        print("Learning path is as follows:")
+        for material in course_materials_to_learn:
+            print("vvv")
+            print(material)
 
     def set_age(self, age):
         self.user_data['age'] = age

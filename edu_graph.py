@@ -11,7 +11,7 @@ def test():
 
     api = edu_graph.KnowledgeApi(library)
     api.prompt_for_user_profile()
-    pp.pprint(api.user_data)
+    api.get_learning_path_by_criteria()
 
     # library.export("rdf.json", "json-ld")
     exit()
