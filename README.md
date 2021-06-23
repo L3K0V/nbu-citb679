@@ -77,7 +77,7 @@ Commands:
 Example usage:
 
 ```
-py edu_graph.py concepts data/rdf.json --format json-ld
+python3 edu_graph.py concepts data/rdf.json --format json-ld
 ```
 
 ## Frontend

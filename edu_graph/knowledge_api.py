@@ -21,7 +21,7 @@ class KnowledgeApi:
             return '?m sdo:teaches "' + self.user_data['concept'] + '"'
 
     def __edu_level_where_clause(self):
-        if (not self.user_data['edu_level'] or self.user_data['edu_level'] == 'None'):
+        if (not self.user_data['edu_level'] or self.user_data['edu_level'] == 'Non-specific'):
             return 'FILTER NOT EXISTS {?m sdo:educationalLevel ?edu_level}'
         else:
             return '?m sdo:educationalLevel "' + self.user_data['edu_level'] + '"'
