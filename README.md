@@ -2,7 +2,6 @@
 
 ![image](https://user-images.githubusercontent.com/2267270/121960611-0098a600-cd6f-11eb-9d4e-7ec43d9dd1cc.png)
 
-
 ## Getting started
 
 Create virtual environment via:
@@ -24,10 +23,16 @@ and install all requirements
 $ pip install -r requirements.txt
 ```
 
+### Run questionare
+
+```
+python3 edu_graph.py sample
+```
+
 ### Search for materials
 
 ```
-py edu_graph.py search --help
+python3 edu_graph.py search --help
 Usage: edu_graph search [OPTIONS] FILENAME
 
   Search within the graph for a materials based on a set of criterias
@@ -49,15 +54,17 @@ Options:
 Example usage:
 
 ```
-py edu_graph.py search data/rdf.json --format json-ld --age 8-10 --topic Програмиране --lang Python --concept кортежи --education всички
+python3 edu_graph.py search data/rdf.json --format json-ld --age 8-10 --topic Програмиране --lang Python --concept кортежи --education всички
 ```
+
+**NOTE:** Most arguments are optional and if omitted there will be a wider result set.
 
 ### List some stuff
 
 Executing
 
 ```
-py edu_graph.py
+python3 edu_graph.py
 Usage: edu_graph [OPTIONS] COMMAND [ARGS]...
 
   A CLI for querying learning materials from a RDF based educational graph
@@ -79,6 +86,8 @@ Example usage:
 ```
 python3 edu_graph.py concepts data/rdf.json --format json-ld
 ```
+
+**NOTE:** Using a `--print` you can specify the output print format, `plain` or `json` is available
 
 ## Frontend
 

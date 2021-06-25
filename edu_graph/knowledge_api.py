@@ -26,7 +26,6 @@ class KnowledgeApi:
         else:
             return '?m sdo:educationalLevel "' + self.user_data['edu_level'] + '"'
 
-
     def __ask_for_age(self):
         ages = self.list_ages()
 
@@ -181,7 +180,7 @@ class KnowledgeApi:
 
     def get_learning_path_by_criteria(self):
         node, course, title = self.user_data['edu_material']
-        
+
         qRes = self.library.graph.query(
             """
             SELECT DISTINCT ?material ?title
@@ -198,7 +197,7 @@ class KnowledgeApi:
             if row[0] in self.user_data['already_known']:
                 continue
             course_materials_to_learn.append(row[0] + " " + row[1])
-            
+
         print("Learning path is as follows:")
         for material in course_materials_to_learn:
             print("vvv")
